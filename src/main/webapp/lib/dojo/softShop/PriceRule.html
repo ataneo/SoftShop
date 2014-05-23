@@ -1,0 +1,21 @@
+<tr class="priceRule">
+			<td><input type="text" dojoAttachPoint="from"
+				data-dojo-type="dijit.form.ValidationTextBox" name="fromRange"
+				intermediateChanges="false" trim="false" uppercase="false"
+				lowercase="false" propercase="false" style="width: 4em;" value="${fromRange}"></input></td>
+			<td><input type="text" dojoAttachPoint="to" name="toRange"
+				data-dojo-type="dijit.form.ValidationTextBox"
+				intermediateChanges="false" trim="false" uppercase="false" value="${toRange}"
+				lowercase="false" propercase="false" style="width: 4em;"></input></td>
+			<td><input type="text" dojoAttachPoint="singleSided" dojoAttachEvent="onChange:singleSidedClicked"
+				data-dojo-type="dijit.form.ValidationTextBox" name="price" value="${price}"
+				intermediateChanges="false" trim="false" uppercase="false" 
+				lowercase="false" propercase="false" style="width: 20em;"></input></td>
+			<td><input type="text" dojoAttachPoint="doubleSided" dojoAttachEvent="onChange:doubleSidedClicked"
+				data-dojo-type="dijit.form.ValidationTextBox" name="doubleSidedprice"
+				intermediateChanges="false" trim="false" uppercase="false" value="${doubleSidedprice}"
+				lowercase="false" propercase="false" style="width: 20em;"></input></td>
+			<td><input type="button" data-dojo-type="dijit.form.Button" dojoAttachPoint="cancel"
+				intermediateChanges="false" label="Delete" iconClass="dijitNoIcon"></input>
+			</td>
+		</tr>

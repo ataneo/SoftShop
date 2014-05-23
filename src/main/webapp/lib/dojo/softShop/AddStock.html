@@ -1,0 +1,61 @@
+<tr class="magicRow">
+	<td>
+		
+			<select data-dojo-type="dijit.form.FilteringSelect" name="item" dojoAttachPoint="item_filter"
+				intermediateChanges="false" trim="false"
+				uppercase="false" lowercase="false" propercase="false"
+				 pageSize="Infinity" store="itemStore"  searchAttr="name"
+				>														
+			</select>
+		</td>
+	<td>
+		<select data-dojo-type="dijit.form.FilteringSelect" dojoAttachPoint="category_filter"
+				intermediateChanges="false" trim="false" name="category"
+				pageSize="Infinity" store="categoryStore" searchAttr="name" onChange="saveCategoryInSession(arguments[0]);"
+				>														
+			</select>
+		</td>
+	<td>
+		<select data-dojo-type="dijit.form.FilteringSelect" dojoAttachPoint="brand_filter"
+				intermediateChanges="false" trim="false" name="brand"
+				pageSize="Infinity" store="brandStore" searchAttr="brandName"
+				>
+			</select>
+		</td>
+	<td><input type="text" dojoAttachPoint="length" name="length" 
+		data-dojo-type="dijit.form.ValidationTextBox"
+		intermediateChanges="false" trim="false" uppercase="false"
+		lowercase="false" propercase="false" required="required"
+		state="Error" style="width:4em"></input></td>
+	<td><input type="text" dojoAttachPoint="width" name="width"
+		data-dojo-type="dijit.form.ValidationTextBox"
+		intermediateChanges="false" trim="false" uppercase="false"
+		lowercase="false" propercase="false" required="required"
+		state="Error" style="width:4em"></input></td>
+	<td>
+		<input type="text" dojoAttachPoint="unit" name="area" data-dojo-type="dijit.form.TextBox" disabled="disabled" style="width:4em">
+	</td>
+	<td><input type="text" dojoAttachPoint="count" name="count"
+		data-dojo-type="dijit.form.ValidationTextBox"
+		intermediateChanges="false" trim="false" uppercase="false"
+		lowercase="false" propercase="false" required="required"
+		state="Error" style="width:4em"></input></td>
+	<td>
+     <input type="checkbox" dojoAttachPoint="bothSide" name="bothSide" data-dojo-type="dijit.form.CheckBox" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+   	</td>
+	<td>
+	<input type="text" dojoAttachPoint="Amount" name="amount"
+		data-dojo-type="dijit.form.CurrencyTextBox"
+		disabled="disabled" readOnly="readOnly"
+		intermediateChanges="false" trim="false" uppercase="false"
+		lowercase="false" propercase="false" required="required"
+		currency="Rs. "
+		regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))"
+		style="width: 9em;"></input>
+	</td>
+	<td>
+		<input type="button" dojoAttachPoint="cancel" data-dojo-type="dijit.form.Button"
+												intermediateChanges="false" label="Cancel"
+												iconClass="dijitNoIcon"></input>
+	</td>
+</tr>

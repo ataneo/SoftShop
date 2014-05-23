@@ -1,0 +1,3208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>SOFT BUSINESS MANAGEMENT</title>
+<script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'async':true,'parseOnLoad':true,'packages':[{'name':'maqetta','location':'../../maqetta'},{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'shapes','location':'../../shapes'},{'name':'jquery-ui','location':'../../jquery-ui'},{'name':'yui','location':'../../yui'}]"></script>
+<script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dijit/layout/BorderContainer",
+  "dijit/layout/ContentPane",
+  "dijit/layout/AccordionContainer",
+  "dijit/layout/TabContainer",
+  "dijit/form/ValidationTextBox",
+  "dijit/form/RadioButton",
+  "dijit/form/Button",
+  "dijit/form/ComboBox",
+  "dijit/TitlePane",
+  "dijit/form/CheckBox",
+  "dojox/io/xhrScriptPlugin",
+  "gridx/Grid",
+  "gridx/core/model/cache/Async",
+  "dojox/data/CsvStore",
+  "dijit/form/TimeTextBox",
+  "dojo/data/ItemFileReadStore",
+  "dijit/ProgressBar",
+  "dijit/form/CurrencyTextBox",
+  "dijit/form/FilteringSelect"
+]);
+</script>
+<style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "lib/dojo/gridx/resources/claro/Gridx.css";@import "lib/dojo/gridx/resources/claro/Gridx_rtl.css";@import "lib/jquery-ui/css/smoothness/jquery-ui-1.8.11.custom.css";@import "app.css";
+</style>
+<script type="text/javascript" src="lib/jquery-ui/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="lib/jquery-ui/jquery-ui-1.8.11.custom.min.js"></script>
+</head>
+<body class="claro" dvFlowLayout="true" data-davinci-ws="collapse" id="myapp">
+ <div data-dojo-type="dijit.layout.BorderContainer" design="headline" persist="false" gutters="true" style="z-index: 0; width: 100%; height: 100%; min-width: 800px; min-height: 650px;">
+ <div data-dojo-type="dijit.layout.ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" style="height: 50px;" doLayout="false">
+    <div style="padding: 1em; text-align: center; background-color: #ffff96;">
+     <label style="color: #0000ff; font-size: 20px; font-weight: bold; text-decoration: underline; font-family: Geneva,Tahoma,sans-serif;">
+       SOFT BUSINESS MANAGEMENT</label>
+   </div>
+  </div>
+   <div data-dojo-type="dijit.layout.ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false"><span data-dojo-type="dijit.layout.TabContainer" tabPosition="left-h" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController" style="min-width: 1em; min-height: 1em; width: 100%; height: 100%;"><div data-dojo-type="dijit.layout.ContentPane" title="Home" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false"></div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Billing" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <span data-dojo-type="dijit.layout.TabContainer" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController" style="min-width: 1em; min-height: 1em; width: 100%; height: 100%;"><div data-dojo-type="dijit.layout.ContentPane" title="New Bill" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false" splitter="false" maxSize="Infinity">
+    <div data-dojo-type="dijit.layout.BorderContainer" persist="false" gutters="true" style="min-width: 1em; min-height: 1em; z-index: 0; height: 100%; width: 922px;">
+      <div data-dojo-type="dijit.layout.ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false" region="top" splitter="true" maxSize="Infinity" style="text-align: center;">
+        <form>
+          <table style="width: 100%;">
+            <tbody>
+              <tr>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    
+                    Customer Name :</label>
+                </td>
+                <td>
+                  <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="name" value="PRASENJIT NATH" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <form>
+          <table style="width: 100%;">
+            <tbody>
+              <tr>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    Address :</label>
+                </td>
+                <td>
+                  <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="street" value="HABIBPUR" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    Post Office :</label>
+                </td>
+                <td>
+                  <select data-dojo-type="dijit.form.ComboBox" name="postOffice" value="HABIBPUR" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100%;">
+                    <option value="HABIBPUR">
+                      HABIBPUR</option>
+                    <option value="RANAGHAT">
+                      RANAGHAT</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    Police Station :</label>
+                </td>
+                <td>
+                  <select data-dojo-type="dijit.form.ComboBox" name="policeStation" value="RANAGHAT" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100%;">
+                    <option value="RANAGHAT">
+                      RANAGHAT</option>
+                    <option value="SHANTIPUR">
+                      SHANTIPUR</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    District :</label>
+                </td>
+                <td>
+                  <select data-dojo-type="dijit.form.ComboBox" name="district" value="NADIA" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100%;">
+                    <option value="NADIA">
+                      NADIA</option>
+                    <option value="N 24 PARGANA">
+                      N 24 PARGANA</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    State :</label>
+                </td>
+                <td>
+                  <select data-dojo-type="dijit.form.ComboBox" name="currentState" value="WEST BENGAL" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100%;">
+                    <option value="WEST BENGAL">
+                      WEST BENGAL</option>
+                    <option value="BIHAR">
+                      BIHAR</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    Pin :</label>
+                </td>
+                <td>
+                  <select data-dojo-type="dijit.form.ComboBox" name="pin" value="741403" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100%;">
+                    <option value="741403">
+                      741403</option>
+                    <option value="741402">
+                      741402</option>
+                    <option value="741401">
+                      741401</option>
+                  </select>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    E-Mail :</label>
+                </td>
+                <td>
+                  <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="emailId" value="prasenjit.habibpur@gmail.com" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 100%;"></input>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    Mobile :</label>
+                </td>
+                <td>
+                  <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="custMobile" value="9735296618" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" regExp="^[0-9]{10}$" style="width: 100%;"></input>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <label style="font-weight: bold;">
+                    Recommended by :</label>
+                </td>
+                <td>
+                  <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="custRec" value="SELF" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        <form>
+    <table style="width: 100%;">
+            <tbody>
+              <tr>
+                <td style="width: 25%;"></td>
+                <td style="width: 25%;">
+                  <label style="font-weight: bold;">
+                    
+                    Grade of the Customer :</label>
+                </td>
+                <td>
+                  <table style="width: 100%; text-align: center;">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <label>
+                            
+                            A</label>
+                        </td>
+                        <td>
+                          <label>
+                            
+                            B</label>
+                        </td>
+                        <td>
+                          <label>
+                            
+                            C</label>
+                        </td>
+                        <td>
+                          <label>
+                            
+                            D</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                        </td>
+                        <td>
+                          <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                        </td>
+                        <td>
+                          <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                        </td>
+                        <td>
+                          <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td style="width: 25%;"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>
+                  <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Add" iconClass="dijitNoIcon"></input>
+                </td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </form>
+        </div>
+      <div data-dojo-type="dijit.layout.ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false" region="center" splitter="false" maxSize="Infinity" style="text-align: center;">
+        <table style="width: 100%; text-align: center;">
+          <tbody>
+            <tr style="font-weight: bold;">
+              <td>
+                <label>
+                  Sl.No.</label>
+              </td>
+              <td>
+                <label>
+                  Item</label>
+              </td>
+              <td>
+                <label>
+                  Category</label>
+              </td>
+              <td>
+                <label>
+                  Brand</label>
+              </td>
+              <td>
+                <label>
+                  Length</label>
+              </td>
+              <td>
+                <label>
+                  Width</label>
+              </td>
+              <td>
+                <label>
+                  Area</label>
+              </td>
+              <td>
+                <label>
+                  Count</label>
+              </td>
+              <td>
+                <label>
+                  Amount (Rs)</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  1.</label>
+              </td>
+              <td style="width: 12em;">
+                <select data-dojo-type="dijit.form.ComboBox" value="Flex Media" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 10em;">
+                  <option value="Flex Media">
+                    Flex Media</option>
+                  <option value="Digital Media">
+                    Digital Media</option>
+                  <option value="Extra">
+                    Extra</option>
+                </select>
+              </td>
+              <td style="width: 12em;">
+                <select data-dojo-type="dijit.form.ComboBox" value="F/L" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 10em;">
+                  <option value="Flex">
+                    Flex</option>
+                  <option value="F/L">
+                    F/L</option>
+                  <option value="B/L">
+                    B/L</option>
+                  <option value="GSM 250g">
+                    GSM 250g</option>
+                  <option value="GSM 150g">
+                    GSM 150g</option>
+                  <option value="GAM SHEET">
+                    GAM SHEET</option>
+                  <option></option>
+                  <option value="150g">
+                    150g</option>
+                </select>
+              </td>
+              <td>
+                <select data-dojo-type="dijit.form.ComboBox" value="A" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 3em;">
+                  <option value="A">
+                    A</option>
+                  <option value="B">
+                    B</option>
+                  <option value="C">
+                    C</option>
+                  <option value="D">
+                    D</option>
+                </select>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" value="3" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 3em;"></input>
+                <label>
+                  Ft</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" value="1" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 3em;"></input>
+                <label>
+                  Ft</label>
+              </td>
+              <td>
+                <label>
+                  3</label>
+                <label>
+                  Sq Ft</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" value="1" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" style="width: 3em;"></input>
+                <label>
+                  Pic</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Add New Item" iconClass="dijitNoIcon"></input>
+              </td>
+              <td style="text-align: left;"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Total</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Advance</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <label style="font-weight: bold;">
+                  Delivery Date &amp; time :</label>
+              </td>
+              <td style="text-align: left;">
+                <div dvwidget="jquery.ui.datepicker">
+                  <input id="widget_1144_datepicker" type="text"></input>
+                  <script>$('#widget_1144_datepicker').datepicker();</script>
+                </div>
+              </td>
+              <td style="text-align: left;">
+                <input type="text" data-dojo-type="dijit.form.TimeTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false"></input>
+              </td>
+              <td>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+              </td>
+              <td>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Print" iconClass="dijitNoIcon"></input>
+              </td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Due</label>
+              </td>
+              <td>
+                <label style="font-weight: bold;">
+                  100</label>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Update Bill" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false" splitter="false" maxSize="Infinity">
+    <div data-dojo-type="dijit.layout.BorderContainer" persist="false" gutters="true" style="min-width: 1em; min-height: 1em; z-index: 0; height: 100%;">
+      <div data-dojo-type="dijit.layout.ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false" region="top" splitter="true" maxSize="Infinity" style="text-align: center;">
+        <table style="width: 100%; text-align: left;">
+          <tbody>
+            <tr>
+              <td style="width: 20%;"></td>
+              <td style="width: 30%;">
+                <label style="font-weight: bold;">
+                  Bill No :</label>
+              </td>
+              <td style="width: 30%;">
+               <select data-dojo-type="dijit.form.FilteringSelect" value="000501" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" pageSize="Infinity">
+                 <option value="000501" selected="selected">
+                   000501</option>
+                 <option value="000502">
+                   000502</option>
+                 <option value="000503">
+                   000503</option>
+                 <option value="000504">
+                   000504</option>
+                 <option value="000505">
+                   000505</option>
+               </select>
+             </td>
+              <td style="width: 20%;"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Date / Time :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  20/06/2012::15:20</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Customer ID :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  XXX333B</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Customer Name :</label>
+              </td>
+              <td>
+               <select data-dojo-type="dijit.form.FilteringSelect" value="PRASENJIT NATH" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" pageSize="Infinity">
+                 <option value="PRASENJIT NATH" selected="selected">
+                   PRASENJIT NATH</option>
+                 <option value="ATANU NATH">
+                   ATANU NATH</option>
+               </select>
+             </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Address :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  HABIBPUR</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  P.O. :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  HABIBPUR</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  P.S. :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  RANAGHAT</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Dist :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  NADIA</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Pin :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  9735296618</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  E-Mail :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  prasenjit.habibpur@gmail.com</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Mobile :</label>
+              </td>
+              <td>
+               <select data-dojo-type="dijit.form.FilteringSelect" value="9735296618" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" pageSize="Infinity">
+                 <option value="9735296618" selected="selected">
+                   9735296618</option>
+                 <option value="9800762244">
+                   9800762244</option>
+                 <option value="8956325478">
+                   8956325478</option>
+               </select>
+             </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Recommended by :</label>
+              </td>
+              <td>
+                <label style="width: 100%;">
+                  SELF</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Grade of the Customer :</label>
+              </td>
+              <td>
+                <label>
+                  A</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div data-dojo-type="dijit.layout.ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false" region="center" splitter="false" maxSize="Infinity" style="text-align: center;">
+        <table style="width: 100%; text-align: center;">
+          <tbody>
+            <tr style="font-weight: bold;">
+              <td>
+                <label>
+                  Sl.No.</label>
+              </td>
+              <td>
+                <label>
+                  Item</label>
+              </td>
+              <td>
+                <label>
+                  Category</label>
+              </td>
+              <td>
+                <label>
+                  Brand</label>
+              </td>
+              <td>
+                <label>
+                  Length</label>
+              </td>
+              <td>
+                <label>
+                  Width</label>
+              </td>
+              <td>
+                <label>
+                  Total</label>
+              </td>
+              <td>
+                <label>
+                  Area</label>
+              </td>
+              <td>
+                <label>
+                  Amount (Rs)</label>
+              </td>
+              <td>
+                <label>
+                  Used Roll</label>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>
+                  1.</label>
+              </td>
+              <td style="width: 12em;">
+                <label>
+                  Flex Media</label>
+              </td>
+              <td style="width: 12em;">
+                <label>
+                  F/L</label>
+              </td>
+              <td>
+                <label>
+                  A</label>
+              </td>
+              <td>
+                <label>
+                  3</label>
+                <label>
+                  Ft</label>
+              </td>
+              <td>
+                <label>
+                  1</label>
+                <label>
+                  Ft</label>
+              </td>
+              <td>
+                <label>
+                  24</label>
+                <label>
+                  Ft</label>
+              </td>
+              <td>
+                <label>
+                  10</label>
+                <label>
+                  Sq Ft</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td>
+                <select data-dojo-type="dijit.form.ComboBox" value="3 Ft" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 5em;">
+                  <option value="3 Ft">
+                    3 Ft</option>
+                  <option value="4 Ft">
+                    4 Ft</option>
+                  <option value="5 Ft">
+                    5 Ft</option>
+                  <option value="6 Ft">
+                    6 Ft</option>
+                  <option value="7 Ft">
+                    7 Ft</option>
+                  <option value="8 Ft">
+                    8 Ft</option>
+                  <option value="10 Ft">
+                    10 Ft</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align: left;"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Total</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align: left;"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Advance</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align: left;"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Due</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Delivery Date &amp; Time :</label>
+              </td>
+              <td style="text-align: left;">
+                <label>
+                  06/12/2012::14:30</label>
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;">
+                <label style="font-weight: bold;">
+                  Paid</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.CurrencyTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" currency="Rs. " regExp="((?:(?:(?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|)))))|(?:\((?:Rs\.[\s\xa0])?((?:(?:(?:(?:0|[1-9]\d{0,2}(?:[,]\d{3})*)|(?:\d+))(?:\.\d{2}|))|(?:(?:\.\d{2}|))))\))))" state="Incomplete" style="width: 6em;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Paid Date :</label>
+              </td>
+              <td style="text-align: left;">
+                <div dvwidget="jquery.ui.datepicker">
+                  <input id="widget_1830_datepicker" type="text"></input>
+                  <script>$('#widget_1830_datepicker').datepicker();</script>
+                </div>
+              </td>
+              <td>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+              </td>
+              <td>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Print" iconClass="dijitNoIcon"></input>
+              </td>
+              <td></td>
+              <td></td>
+              <td style="text-align: right;"></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  </span></div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Sells" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em;">
+    <legend style="font-weight: bold;">
+      Today's Sells</legend>
+    <table style="width: 100%; text-align: center;">
+      <tbody>
+        <tr style="font-weight: bold;">
+          <td>
+            <label>
+              Sl. No.</label>
+          </td>
+          <td>
+            <label>
+              Time</label>
+          </td>
+          <td>
+            <label>
+              Bill No.</label>
+          </td>
+          <td>
+            <label>
+              Bill Amount</label>
+          </td>
+          <td>
+            <label>
+              Paid Amount</label>
+          </td>
+          <td>
+            <label>
+              Due Amount</label>
+          </td>
+          <td>
+            <label>
+              Delevared</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              1</label>
+          </td>
+          <td>
+            <label>
+              10:30</label>
+          </td>
+          <td>
+            <label>
+              000501</label>
+          </td>
+          <td>
+            <label>
+              800</label>
+          </td>
+          <td>
+            <label>
+              500</label>
+          </td>
+          <td>
+            <label>
+              300</label>
+          </td>
+          <td>
+            <label>
+              No</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              2</label>
+          </td>
+          <td>
+            <label>
+              10:45</label>
+          </td>
+          <td>
+            <label>
+              000502</label>
+          </td>
+          <td>
+            <label>
+              500</label>
+          </td>
+          <td>
+            <label>
+              400</label>
+          </td>
+          <td>
+            <label>
+              100</label>
+          </td>
+          <td>
+            <label>
+              Yes</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr style="font-weight: bold; font-size: 1.3em;">
+          <td></td>
+          <td></td>
+          <td>
+            <label>
+              Total</label>
+          </td>
+          <td>
+            <label>
+              1300</label>
+          </td>
+          <td>
+            <label>
+              900</label>
+          </td>
+          <td>
+            <label>
+              400</label>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </fieldset>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Customer" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <span data-dojo-type="dijit.layout.AccordionContainer" duration="200" persist="false" style="min-width: 1em; min-height: 1em; width: 100%; height: 100%; text-align: center;"><div data-dojo-type="dijit.layout.ContentPane" title="Customer Details" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+    <table style="width: 100%; text-align: center;">
+      <tbody>
+        <tr style="font-weight: bold;">
+          <td>
+            <label>
+              Sl. No.</label>
+          </td>
+          <td>
+            <label>
+              Customer ID</label>
+          </td>
+          <td>
+            <label>
+              Customer Name</label>
+          </td>
+          <td>
+            <label>
+              Mobile</label>
+          </td>
+          <td>
+            <label>
+              E-mail</label>
+          </td>
+          <td>
+            <label>
+              Address</label>
+          </td>
+          <td>
+            <label>
+              Post Office</label>
+          </td>
+          <td>
+            <label>
+              Police Station</label>
+          </td>
+          <td>
+            <label>
+              District</label>
+          </td>
+          <td>
+            <label>
+              PIN Code</label>
+          </td>
+          <td>
+            <label>
+              Recommended by</label>
+          </td>
+          <td>
+            <label>
+              Grade</label>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              1</label>
+          </td>
+          <td>
+            <label>
+              XXX00501A</label>
+          </td>
+          <td>
+            <label>
+              Prasenjit Nath</label>
+          </td>
+          <td>
+            <label>
+              9735296618</label>
+          </td>
+          <td>
+            <label>
+              prasenjit@gmail.com</label>
+          </td>
+          <td>
+            <label>
+              Habibpur</label>
+          </td>
+          <td>
+            <label>
+              Habibpur</label>
+          </td>
+          <td>
+            <label>
+              Ranaghat</label>
+          </td>
+          <td>
+            <label>
+              Nadia</label>
+          </td>
+          <td>
+            <label>
+              741403</label>
+          </td>
+          <td>
+            <label>
+              Self</label>
+          </td>
+          <td>
+            <label>
+              A</label>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              2</label>
+          </td>
+          <td>
+            <label>
+              XXX00505B</label>
+          </td>
+          <td>
+            <label>
+              Atanu Nath</label>
+          </td>
+          <td>
+            <label>
+              9735996699</label>
+          </td>
+          <td>
+            <label>
+              atanu@gmail.com</label>
+          </td>
+          <td>
+            <label>
+              Habibpur</label>
+          </td>
+          <td>
+            <label>
+              Habibpur</label>
+          </td>
+          <td>
+            <label>
+              Ranaghat</label>
+          </td>
+          <td>
+            <label>
+              Nadia</label>
+          </td>
+          <td>
+            <label>
+              741226</label>
+          </td>
+          <td>
+            <label>
+              Prasenjit Nath</label>
+          </td>
+          <td>
+            <label>
+              B</label>
+          </td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Add A New Customer" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+    <form>
+      <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <td style="width: 25%;"></td>
+            <td style="width: 25%;">
+           </td>
+            <td style="width: 25%;">
+            </td>
+            <td style="width: 25%;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+             <label style="font-weight: bold;">
+               Customer Name :</label>
+           </td>
+            <td>
+             <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="name" value="PRASENJIT NATH" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+           </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+    <form>
+     <table style="width: 100%;">
+       <tbody>
+         <tr>
+           <td style="width: 25%;"></td>
+           <td style="width: 25%;">
+           </td>
+           <td style="width: 25%;">
+           </td>
+           <td style="width: 25%;"></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+            <label style="font-weight: bold;">
+              Address :</label>
+          </td>
+           <td>
+            <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="street" value="HABIBPUR" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+            <label style="font-weight: bold;">
+              Post Office :</label>
+          </td>
+           <td>
+            <select data-dojo-type="dijit.form.ComboBox" value="HABIBPUR" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" name="postOffice" style="width: 100%;">
+              <option value="HABIBPUR">
+                HABIBPUR</option>
+              <option value="RANAGHAT">
+                RANAGHAT</option>
+            </select>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+            <label style="font-weight: bold;">
+              Police Station :</label>
+          </td>
+           <td>
+            <select data-dojo-type="dijit.form.ComboBox" value="RANAGHAT" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" name="policeStation" style="width: 100%;">
+              <option value="RANAGHAT">
+                RANAGHAT</option>
+              <option value="SHANTIPUR">
+                SHANTIPUR</option>
+            </select>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+            <label style="font-weight: bold;">
+              District :</label>
+          </td>
+           <td>
+            <select data-dojo-type="dijit.form.ComboBox" value="NADIA" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" name="district" style="width: 100%;">
+              <option value="NADIA">
+                NADIA</option>
+              <option value="N 24 PARGANA">
+                N 24 PARGANA</option>
+            </select>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+            <label style="font-weight: bold;">
+              State :</label>
+          </td>
+           <td>
+            <select data-dojo-type="dijit.form.ComboBox" value="WEST BENGAL" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" name="currentState" style="width: 100%;">
+              <option value="WEST BENGAL">
+                WEST BENGAL</option>
+              <option value="BIHAR">
+                BIHAR</option>
+            </select>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+             <label style="font-weight: bold;">
+               Pin :</label>
+           </td>
+           <td>
+            <select data-dojo-type="dijit.form.ComboBox" value="741403" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" name="pin" style="width: 100%;">
+              <option value="741403">
+                741403</option>
+              <option value="741402">
+                741402</option>
+              <option value="741401">
+                741401</option>
+            </select>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+             <label style="font-weight: bold;">
+               E-Mail :</label>
+           </td>
+           <td>
+            <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="emailId" value="prasenjit.habibpur@gmail.com" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 100%;"></input>
+          </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+             <label style="font-weight: bold;">
+               Mobile :</label>
+           </td>
+           <td>
+             <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="custMobile" value="9735296618" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" regExp="^[0-9]{10}$" style="width: 100%;"></input>
+           </td>
+           <td></td>
+         </tr>
+         <tr>
+           <td></td>
+           <td>
+             <label style="font-weight: bold;">
+               Recommended by :</label>
+           </td>
+           <td>
+             <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="custRec" value="SELF" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+           </td>
+           <td></td>
+         </tr>
+         <tr>
+         <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+         </tr>
+         </tbody>
+     </table>
+   </form>
+    <form>
+      <table style="width: 100%;">
+        <tbody>
+          <tr>
+            <td style="width: 25%;"></td>
+            <td style="width: 25%;">
+              <label style="font-weight: bold;">
+                Grade of the Customer :</label>
+            </td>
+            <td>
+              <table style="width: 100%; text-align: center;">
+                <tbody>
+                  <tr>
+                    <td>
+                      <label>
+                        A</label>
+                    </td>
+                    <td>
+                      <label>
+                        B</label>
+                    </td>
+                    <td>
+                      <label>
+                        C</label>
+                    </td>
+                    <td>
+                      <label>
+                        D</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                    <td>
+                      <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                    <td>
+                      <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                    <td>
+                      <input showlabel="true" type="radio" data-dojo-type="dijit.form.RadioButton" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+            <td style="width: 25%;"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+              <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Add" iconClass="dijitNoIcon"></input>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+          <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          </tbody>
+      </table>
+    </form>
+  </div>
+  </span>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Price List" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <span data-dojo-type="dijit.TitlePane" title="Flex Media" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" duration="200" open="true" style="min-width: 1em; width: 100%; text-align: center; height: auto;">
+<form>
+ <table style="width: 100%; font-weight: bold;">
+   <tbody>
+     <tr>
+       <td></td>
+       <td>
+         <label style="font-size: 1em;">
+           
+            Brand</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td></td>
+       <td></td>
+     </tr>
+     <tr>
+       <td>
+         <label style="font-size: 1em;">
+           
+            Category</label>
+       </td>
+       <td>
+         <label style="font-size: 1em;">
+           
+            Customer Grade</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            A</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            B</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            C</label>
+       </td>
+       <td>
+         <label style="font-size: 6pt;">
+           
+            D</label>
+       </td>
+       <td></td>
+       <td></td>
+     </tr>
+     <tr>
+       <td>
+         <label style="font-size: 8pt;">
+           
+            F/L</label>
+       </td>
+       <td>
+         <label style="font-size: 1em;">
+           
+            Rate par</label>
+         <label style="font-size: 1em;">
+           
+            Sq Ft</label>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+       </td>
+       <td></td>
+     </tr>
+     <tr>
+       <td>
+         <label style="font-size: 8pt;">
+           
+            B/L</label>
+       </td>
+       <td>
+         <label style="font-size: 1em;">
+           
+            Rate par</label>
+         <label style="font-size: 1em;">
+           
+            Sq Ft</label>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 2em;"></input>
+       </td>
+       <td>
+         <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+       </td>
+       <td></td>
+     </tr>
+     <tr>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+     </tr>
+   </tbody>
+ </table>
+</form>
+</span>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Stock" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <span data-dojo-type="dijit.layout.AccordionContainer" duration="200" persist="false" style="min-width: 1em; min-height: 1em; width: 100%; text-align: center; height: 90%;"><div data-dojo-type="dijit.layout.ContentPane" title="View Or Entry Stock" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+    <table style="width: 100%; text-align: center; padding-bottom: 5em;">
+      <tbody>
+        <tr style="font-weight: bold;">
+          <td>
+            <label>
+              Sl.No.</label>
+          </td>
+          <td>
+            <label>
+              Item</label>
+          </td>
+          <td>
+            <label>
+              Category</label>
+          </td>
+          <td>
+            <label>
+              Brand</label>
+          </td>
+          <td>
+            <label>
+              Roll</label>
+          </td>
+          <td>
+            <label>
+              Length</label>
+          </td>
+          <td>
+            <label>
+              Area</label>
+          </td>
+          <td>
+            <label>
+              Pice</label>
+          </td>
+          <td>
+            <label>
+              Emty</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              1</label>
+          </td>
+          <td style="width: 12em;">
+            <label>
+              Flex Media</label>
+          </td>
+          <td style="width: 12em;">
+            <label>
+              F/L</label>
+          </td>
+          <td>
+            <label>
+              A</label>
+          </td>
+          <td>
+            <label>
+              3</label>
+            <label>
+              Ft</label>
+          </td>
+          <td>
+            <label>
+              70</label>
+            <label>
+              Ft</label>
+          </td>
+          <td>
+            <label>
+              210</label>
+            <label>
+              Sq Ft</label>
+          </td>
+          <td></td>
+          <td>
+            <span data-dojo-type="dijit.ProgressBar" indeterminate="false" style="width: 100%;"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              2</label>
+          </td>
+          <td style="width: 12em;">
+            <label>
+              Digital Media</label>
+          </td>
+          <td style="width: 12em;">
+            <label>
+              GMS/250g</label>
+          </td>
+          <td>
+            <label>
+              A</label>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <label>
+              240</label>
+          </td>
+          <td>
+            <span data-dojo-type="dijit.ProgressBar" indeterminate="false" style="width: 100%;"></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em;">
+      <legend style="font-weight: bold;">
+        Entry Stock</legend>
+      <table style="width: 100%; text-align: center;">
+        <tbody>
+          <tr>
+            <td>
+              <label>
+                Select A Item</label>
+            </td>
+            <td>
+              <label>
+                Select A Category</label>
+            </td>
+            <td>
+              <label>
+                Select A Brand</label>
+            </td>
+            <td>
+              <label>
+                Roll</label>
+            </td>
+            <td>
+              <label>
+                Number of units</label>
+            </td>
+            <td>
+              <label>
+                Unit</label>
+            </td>
+            <td>
+              <label>
+                Cost / Unit</label>
+            </td>
+            <td>
+              <label>
+                Total Cost</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <form>
+               <select data-dojo-type="dijit.form.ComboBox" value="Item 1" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 80px;">
+                 <option value="Item 1">
+                   
+                  Item 1</option>
+                 <option value="Item 2">
+                   
+                  Item 2</option>
+                 <option value="Item 3">
+                   
+                  Item 3</option>
+               </select>
+             </form>
+              </td>
+            <td>
+             <form>
+               <select data-dojo-type="dijit.form.ComboBox" value="Item 1" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 80px;">
+                 <option value="Item 1">
+                   Item 1</option>
+                 <option value="Item 2">
+                   Item 2</option>
+                 <option value="Item 3">
+                   Item 3</option>
+               </select>
+             </form>
+           </td>
+            <td>
+             <form>
+               <select data-dojo-type="dijit.form.ComboBox" value="Item 1" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 80px;">
+                 <option value="Item 1">
+                   Item 1</option>
+                 <option value="Item 2">
+                   Item 2</option>
+                 <option value="Item 3">
+                   Item 3</option>
+               </select>
+             </form>
+           </td>
+            <td>
+             <form>
+               <select data-dojo-type="dijit.form.ComboBox" value="Item 1" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 80px;">
+                 <option value="Item 1">
+                   Item 1</option>
+                 <option value="Item 2">
+                   Item 2</option>
+                 <option value="Item 3">
+                   Item 3</option>
+               </select>
+             </form>
+           </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 50px;"></input>
+            </td>
+            <td>
+              <label>
+                100</label>
+              <label>
+                Sq Ft</label>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 50px;"></input>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 50px;"></input>
+            </td>
+            <td style="width: 126px; height: 27px;">
+              <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Add Or Edit Product" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+    <table style="width: 100%;">
+      <tbody>
+        <tr style="height: 50%; width: 100%;">
+          <td style="width: 50%; height: 50%;">
+            <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em; text-align: center;">
+              <legend>
+                Item</legend>
+              <table style="border: none; width: 100%; height: 100%;">
+                <tbody>
+                  <tr style="font-weight: bold; text-decoration: underline;">
+                    <td style="width: 25%;"></td>
+                    <td style="width: 25%;"></td>
+                    <td style="width: 25%;"></td>
+                    <td style="width: 10%;"></td>
+                    <td style="width: 15%;"></td>
+                  </tr>
+                  <tr style="font-weight: bold;">
+                    <td>
+                      <label>
+                        Sl. No.</label>
+                    </td>
+                    <td>
+                      <label>
+                        Item</label>
+                    </td>
+                    <td>
+                      <label>
+                        Unit</label>
+                    </td>
+                    <td>
+                      <label>
+                        Roll</label>
+                    </td>
+                    <td style="width: 25%;"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        1</label>
+                    </td>
+                    <td>
+                      <label>
+                        Flex</label>
+                    </td>
+                    <td>
+                      <label>
+                        Sq Ft</label>
+                    </td>
+                    <td>
+                      <input type="checkbox" data-dojo-type="dijit.form.CheckBox" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                    <td style="width: 25%;"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        2</label>
+                    </td>
+                    <td>
+                      <label>
+                        Digital Media</label>
+                    </td>
+                    <td>
+                      <label>
+                        Pices</label>
+                    </td>
+                    <td>
+                      <input type="checkbox" data-dojo-type="dijit.form.CheckBox" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                    <td style="width: 25%;"></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        Add A New Item</label>
+                    </td>
+                    <td>
+                      <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 150px;"></input>
+                    </td>
+                    <td>
+                      <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100px;"></input>
+                    </td>
+                    <td>
+                      <input type="checkbox" data-dojo-type="dijit.form.CheckBox" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                    </td>
+                    <td style="width: 25%;">
+                      <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="width: 25%;"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </td>
+          <td style="width: 50%;">
+            <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em;">
+              <legend>
+                Brand</legend>
+              <table style="width: 100%; height: 100%;">
+                <tbody>
+                  <tr style="font-weight: bold; text-decoration: underline;">
+                    <td style="width: 30%;"></td>
+                    <td></td>
+                    <td style="width: 30%;"></td>
+                  </tr>
+                  <tr style="font-weight: bold;">
+                    <td>
+                      <label>
+                        Sl. No.</label>
+                    </td>
+                    <td>
+                      <label>
+                        Brand</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        1</label>
+                    </td>
+                    <td>
+                      <label>
+                        A</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        2</label>
+                    </td>
+                    <td>
+                      <label>
+                        B</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        Add A New Brand :</label>
+                    </td>
+                    <td>
+                      <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 150px;"></input>
+                    </td>
+                    <td>
+                      <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </td>
+        </tr>
+        <tr style="height: 50%; width: 100%;">
+          <td>
+            <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em;">
+              <legend>
+                Category</legend>
+              <table style="width: 100%; height: 100%;">
+                <tbody>
+                  <tr style="font-weight: bold; text-decoration: underline;">
+                    <td style="width: 25%;"></td>
+                    <td style="width: 25%;"></td>
+                    <td style="width: 25%;"></td>
+                    <td style="width: 25%;"></td>
+                  </tr>
+                  <tr style="font-weight: bold;">
+                    <td>
+                      <label>
+                        Sl. No.</label>
+                    </td>
+                    <td>
+                      <label>
+                        Category</label>
+                    </td>
+                    <td>
+                      <label>
+                        capacity</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        1</label>
+                    </td>
+                    <td>
+                      <label>
+                        F/L</label>
+                    </td>
+                    <td>
+                      <label>
+                        150 Ft</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        2</label>
+                    </td>
+                    <td>
+                      <label>
+                        B/L</label>
+                    </td>
+                    <td>
+                      <label>
+                        150 Ft</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        Add A New Category :</label>
+                    </td>
+                    <td>
+                      <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 150px;"></input>
+                    </td>
+                    <td>
+                      <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 50px;"></input>
+                    </td>
+                    <td>
+                      <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </td>
+          <td>
+            <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em;">
+              <legend>
+                Roll</legend>
+              <table style="width: 100%; height: 100%;">
+                <tbody>
+                  <tr style="font-weight: bold; text-decoration: underline;">
+                    <td style="width: 30%;"></td>
+                    <td></td>
+                    <td style="width: 30%;"></td>
+                  </tr>
+                  <tr style="font-weight: bold;">
+                    <td>
+                      <label>
+                        Sl. No.</label>
+                    </td>
+                    <td>
+                      <label>
+                        Roll</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        1</label>
+                    </td>
+                    <td>
+                      <label>
+                        3 Ft</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        2</label>
+                    </td>
+                    <td>
+                      <label>
+                        4 Ft</label>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <label>
+                        Add A New Roll :</label>
+                    </td>
+                    <td>
+                      <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100px;"></input>
+                    </td>
+                    <td>
+                      <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Save" iconClass="dijitNoIcon"></input>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </fieldset>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </span>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Account" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+  <span data-dojo-type="dijit.layout.AccordionContainer" duration="200" persist="false" style="min-width: 1em; min-height: 1em; width: 100%; height: 100%; text-align: center;"><div data-dojo-type="dijit.layout.ContentPane" title="Customer Account" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+    <table style="width: 100%; text-align: center;">
+      <tbody>
+        <tr style="font-weight: bold;">
+          <td>
+            <label>
+              Sl. No.</label>
+          </td>
+          <td>
+            <label>
+              Customer ID</label>
+          </td>
+          <td>
+            <label>
+              Customer Name</label>
+          </td>
+          <td>
+            <label>
+              Mobile</label>
+          </td>
+          <td>
+            <label>
+              Davit</label>
+          </td>
+          <td>
+            <label>
+              Credit</label>
+          </td>
+          <td>
+            <label>
+              Balence</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              1</label>
+          </td>
+          <td>
+            <label>
+              XXX00501A</label>
+          </td>
+          <td>
+            <label>
+              Prasenjit Nath</label>
+          </td>
+          <td>
+            <label>
+              9735296618</label>
+          </td>
+          <td>
+            <label>
+              1000</label>
+          </td>
+          <td>
+            <label>
+              900</label>
+          </td>
+          <td>
+            <label>
+              100</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              2</label>
+          </td>
+          <td>
+            <label>
+              XXX00505B</label>
+          </td>
+          <td>
+            <label>
+              Atanu Nath</label>
+          </td>
+          <td>
+            <label>
+              9802563256</label>
+          </td>
+          <td>
+            <label>
+              500</label>
+          </td>
+          <td>
+            <label>
+              600</label>
+          </td>
+          <td>
+            <label>
+              -100</label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Employee Account" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+    <table style="width: 100%; text-align: center;">
+      <tbody>
+        <tr style="font-weight: bold;">
+          <td>
+            <label>
+              Sl. No.</label>
+          </td>
+          <td>
+            <label>
+              Employee ID</label>
+          </td>
+          <td>
+            <label>
+              Employee Name</label>
+          </td>
+          <td>
+            <label>
+              Mobile</label>
+          </td>
+          <td>
+            <label>
+              Davit</label>
+          </td>
+          <td>
+            <label>
+              Credit</label>
+          </td>
+          <td>
+            <label>
+              Balence</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              1</label>
+          </td>
+          <td>
+            <label>
+              XXX00501E</label>
+          </td>
+          <td>
+            <label>
+              Kaushik Biswas</label>
+          </td>
+          <td>
+            <label>
+              9856324515</label>
+          </td>
+          <td>
+            <label>
+              1000</label>
+          </td>
+          <td>
+            <label>
+              900</label>
+          </td>
+          <td>
+            <label>
+              100</label>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              2</label>
+          </td>
+          <td>
+            <label>
+              XXX00505E</label>
+          </td>
+          <td>
+            <label>
+              xxxx yyy</label>
+          </td>
+          <td>
+            <label>
+              9023651478</label>
+          </td>
+          <td>
+            <label>
+              500</label>
+          </td>
+          <td>
+            <label>
+              600</label>
+          </td>
+          <td>
+            <label>
+              -100</label>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Shop Account" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+    <table style="padding: 1.5em; width: 100%; text-align: center;">
+      <tbody>
+        <tr style="font-weight: bold;">
+          <td>
+            <label>
+              Sl. No.</label>
+          </td>
+          <td>
+            <label>
+              Date</label>
+          </td>
+          <td>
+            <label>
+              Time</label>
+          </td>
+          <td>
+            <label>
+              Detiles</label>
+          </td>
+          <td>
+            <label>
+              Davit</label>
+          </td>
+          <td>
+            <label>
+              Credit</label>
+          </td>
+          <td>
+            <label>
+              Balence</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              1</label>
+          </td>
+          <td>
+            <label>
+              06/22/2012</label>
+          </td>
+          <td>
+            <label>
+              10:30</label>
+          </td>
+          <td>
+            <label>
+              000501</label>
+          </td>
+          <td>
+            <label>
+              500</label>
+          </td>
+          <td>
+            <label>
+              300</label>
+          </td>
+          <td>
+            <label>
+              200</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <label>
+              2</label>
+          </td>
+          <td>
+            <label>
+              06/26/2012</label>
+          </td>
+          <td>
+            <label>
+              10:45</label>
+          </td>
+          <td>
+            <label>
+              000502</label>
+          </td>
+          <td>
+            <label>
+              400</label>
+          </td>
+          <td>
+            <label>
+              500</label>
+          </td>
+          <td>
+            <label>
+              -100</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr style="font-weight: bold; font-size: 1.3em;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <label>
+              Total</label>
+          </td>
+          <td>
+            <label>
+              900</label>
+          </td>
+          <td>
+            <label>
+              800</label>
+          </td>
+          <td>
+            <label>
+              100</label>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table><span data-dojo-type="dijit.TitlePane" title="Permanent Entry" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" duration="200" open="true" style="min-width: 1em; width: 100%; text-align: center;"><span data-dojo-type="dijit.layout.TabContainer" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController" style="min-width: 1em; min-height: 1em; width: 100%; text-align: center; font-weight: bold; height: 100px;"><div data-dojo-type="dijit.layout.ContentPane" title="Entry Expenditure" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+      <table style="width: 100%; text-align: center;">
+        <tbody>
+          <tr style="font-weight: bold;">
+            <td>
+              <label>
+                Date</label>
+            </td>
+            <td>
+              <label>
+                Time</label>
+            </td>
+            <td>
+              <label>
+                Detiles</label>
+            </td>
+            <td>
+              <label>
+                Amount</label>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                06/26/2012</label>
+            </td>
+            <td>
+              <label>
+                11:45</label>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 90%;"></input>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" value="00" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" style="width: 40px;"></input>
+            </td>
+            <td style="text-align: left;">
+              <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Entry" iconClass="dijitNoIcon"></input>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div data-dojo-type="dijit.layout.ContentPane" title="Pay to Employee" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+      <table style="width: 100%; text-align: center;">
+        <tbody>
+          <tr style="font-weight: bold;">
+            <td>
+              <label>
+                Date</label>
+            </td>
+            <td>
+              <label>
+                Time</label>
+            </td>
+            <td>
+              <label>
+                Employee ID</label>
+            </td>
+            <td>
+              <label>
+                Employee Name</label>
+            </td>
+            <td>
+              <label>
+                Detiles</label>
+            </td>
+            <td>
+              <label>
+                Amount</label>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                06/26/2012</label>
+            </td>
+            <td>
+              <label>
+                11:45</label>
+            </td>
+            <td>
+              <select data-dojo-type="dijit.form.ComboBox" value="XXX001E" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100PX;">
+                <option value="XXX001E">
+                  XXX001E</option>
+                <option value="XXX002E">
+                  XXX002E</option>
+                <option value="XXX003E">
+                  XXX003E</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 80%;"></input>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 90%;"></input>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" value="00" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" style="width: 40px;"></input>
+            </td>
+            <td style="text-align: left;">
+              <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Entry" iconClass="dijitNoIcon"></input>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div data-dojo-type="dijit.layout.ContentPane" title="Pay to Customer" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+      <table style="width: 100%; text-align: center;">
+        <tbody>
+          <tr style="font-weight: bold;">
+            <td>
+              <label>
+                Date</label>
+            </td>
+            <td>
+              <label>
+                Time</label>
+            </td>
+            <td>
+              <label>
+                Customer ID</label>
+            </td>
+            <td>
+              <label>
+                Customer Name</label>
+            </td>
+            <td>
+              <label>
+                Detiles</label>
+            </td>
+            <td>
+              <label>
+                Amount</label>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              <label>
+                06/26/2012</label>
+            </td>
+            <td>
+              <label>
+                11:45</label>
+            </td>
+            <td>
+              <select data-dojo-type="dijit.form.ComboBox" value="XXX001A" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" pageSize="Infinity" style="width: 100PX;">
+                <option value="XXX001A">
+                  XXX001A</option>
+                <option value="XXX002B">
+                  XXX002B</option>
+                <option value="XXX003C">
+                  XXX003C</option>
+              </select>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 80%;"></input>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 90%;"></input>
+            </td>
+            <td>
+              <input type="text" data-dojo-type="dijit.form.ValidationTextBox" value="00" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" style="width: 40px;"></input>
+            </td>
+            <td style="text-align: left;">
+              <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Entry" iconClass="dijitNoIcon"></input>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </span>
+    </span>
+  </div>
+  </span>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Settings" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <span data-dojo-type="dijit.layout.TabContainer" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController" style="min-width: 1em; min-height: 1em; width: 100%; height: 100%;"><div data-dojo-type="dijit.layout.ContentPane" title="Account Settings" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+    <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em; text-align: center;">
+      <legend style="font-weight: bold;">
+        Change The Password</legend>
+      <form action="/SoftShop/authentications">
+        <table style="width: 100%;">
+          <tbody style="width: 100%;">
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Your Username :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="userName" value="koushik" readOnly="readOnly" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Your Old Password :</label>
+              </td>
+              <td style="text-align: left;">
+                <input type="password" data-dojo-type="dijit.form.ValidationTextBox" name="passwordOld" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Create A New Password :</label>
+              </td>
+              <td>
+                <input type="password" data-dojo-type="dijit.form.ValidationTextBox" name="password" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="font-weight: bold;">
+                <label>
+                  Confirm your Password :</label>
+              </td>
+              <td>
+                <input type="password" data-dojo-type="dijit.form.ValidationTextBox" name="passwordConfirm" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td style="text-align: left;">
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Update" iconClass="dijitNoIcon"></input>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </fieldset>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Log Up" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+    <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em; text-align: center;">
+      <legend style="font-weight: bold;">
+        Employee Log Up</legend>
+      <form action="/SoftShop/employees">
+        <table style="width: 100%; text-align: right;">
+          <tbody style="width: 100%;">
+            <tr>
+              <td style="width: 25%;"></td>
+              <td style="width: 25%;">
+                <label style="font-weight: bold;">
+                  Name Of The Employee :</label>
+              </td>
+              <td style="width: 25%];">
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="name" value="KOUSHIK BISWAS" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" style="width: 100%;"></input>
+              </td>
+              <td style="width: 25%;"></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <form action="/SoftShop/addresses">
+        <table style="width: 100%; text-align: right;">
+          <tbody style="width: 100%;">
+            <tr>
+              <td style="width: 25%;"></td>
+              <td style="width: 25%;">
+                <label style="font-weight: bold;">
+                  Address :</label>
+              </td>
+              <td style="width: 25%;">
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="street" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td style="width: 25%;"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  P.O. :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="postOffice" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  P.S. :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Dist :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="district" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  State :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="currentState" intermediateChanges="false" trim="false" uppercase="true" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Pin :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="pin" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" regExp="^[0-9]{6}$" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  E-Mail :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="emailId" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Mobile No:</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="shopPhone" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" regExp="^[0-9]{10}$" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+               <label style="font-weight: bold;">
+                 Phone No :</label>
+             </td>
+              <td>
+               <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="phoneNumber" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" regExp="^[0-9]{10}$" style="width: 100%;"></input>
+               </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <form action="/SoftShop/authentications">
+        <table style="width: 100%; text-align: right;">
+          <tbody style="width: 100%;">
+            <tr>
+              <td style="width: 25%;"></td>
+              <td style="width: 25%;"></td>
+              <td style="width: 25%;"></td>
+              <td style="width: 25%;"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Choose your Username :</label>
+              </td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="userName" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label style="font-weight: bold;">
+                  Create a Password :</label>
+              </td>
+              <td>
+                <input type="password" data-dojo-type="dijit.form.ValidationTextBox" name="password" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="font-weight: bold;">
+                <label>
+                  Confirm your Password :</label>
+              </td>
+              <td>
+                <input type="password" data-dojo-type="dijit.form.ValidationTextBox" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td style="text-align: left;">
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Log Up" iconClass="dijitNoIcon"></input>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </fieldset>
+  </div>
+  </span>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="LogIn" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+  <span data-dojo-type="dijit.layout.AccordionContainer" duration="200" persist="false" style="min-width: 1em; min-height: 1em; width: 100%; height: 100%; text-align: center;"><div data-dojo-type="dijit.layout.ContentPane" title="Log In" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false">
+    <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em; width: 100%;">
+      <legend style="font-weight: bold;">
+        Employee Log In</legend>
+      <form>
+        <table style="width: 100%; text-align: left; font-weight: bold;">
+          <tbody>
+            <tr>
+              <td style="width: 40%;"></td>
+              <td>
+                <label>
+                  Username</label>
+              </td>
+              <td style="width: 30%;"></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="text" data-dojo-type="dijit.form.ValidationTextBox" name="userName" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="height: 20px;"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <label>
+                  Password</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="password" data-dojo-type="dijit.form.ValidationTextBox" name="password" intermediateChanges="false" trim="false" uppercase="false" lowercase="false" propercase="false" required="required" state="Incomplete" style="width: 100%;"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="height: 20px;"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="checkbox" data-dojo-type="dijit.form.CheckBox" intermediateChanges="false" iconClass="dijitNoIcon"></input>
+                <label style="font-weight: normal;">
+                  Stay Logged In</label>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Log In" iconClass="dijitNoIcon"></input>
+                <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Cancel" iconClass="dijitNoIcon"></input>
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </fieldset>
+  </div>
+  <div data-dojo-type="dijit.layout.ContentPane" title="Log Out" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+    <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em;">
+      <legend style="font-weight: bold;">
+        Do you want to Log Out?</legend>
+      <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="No" iconClass="dijitNoIcon"></input>
+      <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Yes" iconClass="dijitNoIcon"></input>
+    </fieldset>
+  </div>
+  </span>
+</div>
+<div data-dojo-type="dijit.layout.ContentPane" title="Exit" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="selected" closable="false">
+  <fieldset style="border: 2px groove threedface; margin: 2px; padding: 0.75em; text-align: center;">
+    <legend style="font-weight: bold;">
+      Do you want to Exit?</legend>
+    <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="No" iconClass="dijitNoIcon"></input>
+    <input type="button" data-dojo-type="dijit.form.Button" intermediateChanges="false" label="Yes" iconClass="dijitNoIcon"></input>
+  </fieldset>
+</div>
+</span></div>
+
+ </div>
+</body>
+</html>

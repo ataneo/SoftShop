@@ -1,0 +1,118 @@
+package org.nath.controller;
+
+
+
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
+import javax.servlet.http.HttpSession;
+
+import org.apache.log4j.Logger;
+import org.nath.model.Account;
+import org.nath.model.Address;
+import org.nath.model.Authentication;
+import org.nath.model.Employee;
+import org.nath.model.Shop;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpRequest;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@RequestMapping("/EmployeeResigtration")
+@Controller
+public class ShopResigtrationController {
+	@RequestMapping(method = RequestMethod.POST)
+	@Transactional
+    public ModelAndView createFromJson(	@RequestParam("employee_Name") String employee_Name,
+    									@RequestParam("employee_street") String employee_street,
+    									@RequestParam("employee_postOffice") String employee_postOffice,
+										@RequestParam("employee_policeStation") String employee_policeStation,
+    									@RequestParam("employee_district") String employee_district,
+										@RequestParam("employee_currentState") String employee_currentState,
+    									@RequestParam("employee_pin") String employee_pin,
+    									@RequestParam("employee_emailId") String employee_emailId,
+    									@RequestParam("employee_mobileNumber") String employee_mobileNumber,
+    									@RequestParam("employee_phoneNumber") String employee_phoneNumber,
+    									@RequestParam("userName") String userName,
+    									@RequestParam("password") String password,
+    									@RequestParam("repeat_password") String repeat_password) {
+        
+										try{
+		Shop shop = new Shop();
+		shop.setName(shopName);
+
+		Address shopAddress = new Address();
+		shopAddress.setStreet(shop_street);
+		shopAddress.setPostOffice(shop_postOffice);
+		shopAddress.setPoliceStation(shop_policeStation);
+		shopAddress.setDistrict(shop_district);
+		shopAddress.setCurrentState(shop_currentState);
+		shopAddress.setPin(Integer.parseInt(shop_pin));
+		shopAddress.setEmailId(shop_emailId);
+		shopAddress.setMobileNumber(new BigInteger(shop_mobileNumber));
+		
+		shopAddress.persist();
+		shop.setAddress(shopAddress);
+		
+		
+		Employee owner = new Employee();
+		owner.setName(owner_name);
+		
+		Address ownerAddress = new Address();
+		ownerAddress.setStreet(owner_street);
+		ownerAddress.setPostOffice(owner_postOffice);
+		ownerAddress.setPoliceStation(owner_policeStation);
+		ownerAddress.setDistrict(owner_district);
+		ownerAddress.setCurrentState(owner_currentState);
+		ownerAddress.setPin(Integer.parseInt(owner_pin));
+		ownerAddress.setEmailId(owner_emailId);
+		ownerAddress.setMobileNumber(new BigInteger(owner_mobileNumber));
+		
+		owner.setAddress(ownerAddress);
+		ownerAddress.persist();
+		
+		owner.persist();
+		
+		Authentication auth = new Authentication();
+		auth.setUserName(userName);
+		auth.setPassword(password);
+		auth.persist();
+		if(!password.equals(repeat_password))
+			throw new RuntimeException("repeat password does not match");
+		if(!"admin".equals(admin_password))
+			throw new RuntimeException("Admin authentication not matching");
+		
+		owner.setAuthentication(auth);
+			
+		shop.setOwner(owner);
+		
+        Account account = new Account();
+        account.setBalance(new BigDecimal(0));
+        account.setDescription("Account created for "+shopName);
+        
+        account.persist();
+        
+        shop.setAccount(account);
+            
+        shop.persist();
+        shop.flush();
+        
+		}catch(Exception e)
+		{
+			Logger logger = Logger.getLogger(this.getClass());
+			logger.error(e.toString());
+			return new ModelAndView("redirect:/Registration.jsp");
+		}
+        
+        return new ModelAndView("redirect:/LogIn.jsp");
+    }
+
+}
